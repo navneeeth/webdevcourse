@@ -57,7 +57,7 @@
 <!--        <p><input type="text" id="myNumber"></p>-->
         <p>
             <select id="myNumber">
-                <option selected>0</option>    
+                <option>0</option>    
                 <option>1</option>    
                 <option>2</option>    
                 <option>3</option>    
@@ -148,6 +148,19 @@
 //                i++;
 //            }
 //            document.getElementById("tweetDiv").innerHTML = tweetString;
+            function doAGuess(correctAnswer) {
+                var guess = Math.floor(Math.random() * 6);
+                if(guess == correctAnswer) {
+                    // Computer is correct.
+                    // gotIt = true;
+                    // alert ("Got it! It was a "+guess+". It took me "+numberOfGuesses+" guesses.");
+                    return true;
+                } else {
+                    //Computer is wrong.
+                    // numberOfGuesses+=1;
+                    return false;
+                }
+            }
             document.getElementById("guess").onclick = function() {
                 var myNumber = document.getElementById("myNumber").value;
                 var gotIt = false;
@@ -157,14 +170,11 @@
                     alert("Please enter a number between 0 and 5.");
                 } else {
                     while(gotIt == false) {
-                        var guess = Math.floor(Math.random() * 6);
-                        if(guess == myNumber) {
-                            // Computer is correct.
+                        if(doAGuess(myNumber)) {
                             gotIt = true;
-                            alert ("Got it! It was a "+guess+". It took me "+numberOfGuesses+" guesses.");
+                            alert ("Got it! It was a "+myNumber+". It took me "+numberOfGuesses+" guesses.");
                         } else {
-                            //Computer is wrong.
-                            numberOfGuesses+=1;
+                            numberOfGuesses++;
                         }
                     }
                 }
