@@ -52,7 +52,20 @@
         <p><input type="text" id="fingerInput"></p>
         <p><button id="checkInput">Check</button></p>
 -->
-        <div id="tweetDiv"></div>
+<!--        <div id="tweetDiv"></div>-->
+        <p>How many fingers are you holding up?</p>
+<!--        <p><input type="text" id="myNumber"></p>-->
+        <p>
+            <select id="myNumber">
+                <option selected>0</option>    
+                <option>1</option>    
+                <option>2</option>    
+                <option>3</option>    
+                <option>4</option>    
+                <option>5</option>    
+            </select>
+        </p>
+        <p><button id="guess">Guess!</button></p>
         <script type="text/javascript">
             // This is a one line comment
             /*
@@ -121,12 +134,41 @@
 //                      alert("Wrong! I am holding "+x+" finger"+y+" up!");
 //                  }
 //              }
-            var tweets = ["Hi everyone!", "I love cornflakes", "Good Night!"];
-            var tweetString;
-            for (var i=0; i<tweets.length; i++) {
-                tweetString = tweetString + "<p>"+tweets[i]+"</p>";
+//            var tweets = ["Hi everyone!", "I love cornflakes", "Good Night!"];
+//            var tweetString ="";
+//            for (var i=0; i<tweets.length; i++) {
+//                tweetString = tweetString + "<p>"+tweets[i]+"</p>";
+//            }
+//            document.getElementById("tweetDiv").innerHTML = tweetString;
+//            var tweets = ["Hi everyone!", "Yalla", "Balla"];
+//            var tweetString = "";
+//            var i = 0;
+//            while(i<tweets.length) {
+//                tweetString = tweetString + "<p>" + tweets[i] + "</p>";
+//                i++;
+//            }
+//            document.getElementById("tweetDiv").innerHTML = tweetString;
+            document.getElementById("guess").onclick = function() {
+                var myNumber = document.getElementById("myNumber").value;
+                var gotIt = false;
+                var numberOfGuesses = 1;
+                //alert(myNumber);
+                if(myNumber>5) {
+                    alert("Please enter a number between 0 and 5.");
+                } else {
+                    while(gotIt == false) {
+                        var guess = Math.floor(Math.random() * 6);
+                        if(guess == myNumber) {
+                            // Computer is correct.
+                            gotIt = true;
+                            alert ("Got it! It was a "+guess+". It took me "+numberOfGuesses+" guesses.");
+                        } else {
+                            //Computer is wrong.
+                            numberOfGuesses+=1;
+                        }
+                    }
+                }
             }
-            document.getElementById("tweetDiv").innerHTML = tweetString;
         </script>
     </body>
 </html>
