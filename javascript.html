@@ -42,6 +42,9 @@
         <button id="textChanger">Change the text!</button>
         <p id="textNew">This is some text.</p>
 -->
+        <p>What is the magic word?</p>
+        <p><input type="text" id="magicWord"></input></p>
+        <p><button id="checkMagicWord">Enter</button></p>
         <script type="text/javascript">
             // This is a one line comment
             /*
@@ -80,14 +83,22 @@
 //                textEntered = document.getElementById("textInput").value;
 //                document.getElementById("textNew").innerHTML = textEntered;
 //            }
-            var myArray = new Array();
-            myArray[0] = "pizza";
-            myArray[1] = "chocolate";
-            var tweets = ["Morning everybody!", "I love coffee!"];
-            //alert(tweets[1]);
-            tweets.push("Back to work!");
-            tweets.splice(1, 1, "Cornflakes for Breakfast!", "Num Num");
-            console.log(tweets);
+//            var myArray = new Array();
+//            myArray[0] = "pizza";
+//            myArray[1] = "chocolate";
+//            var tweets = ["Morning everybody!", "I love coffee!"];
+//            //alert(tweets[1]);
+//            tweets.push("Back to work!");
+//            tweets.splice(1, 1, "Cornflakes for Breakfast!", "Num Num");
+//            console.log(tweets);
+              document.getElementById("checkMagicWord").onclick = function() {
+                  if(document.getElementById("magicWord").value == "magic") {
+                      alert("Correct magic word!");
+                  }  
+                  else {
+                      alert("Wrong magic word! Try again.");
+                  }
+              }
         </script>
     </body>
 </html>
