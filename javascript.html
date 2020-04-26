@@ -37,10 +37,11 @@
         <div class="circle" id="blue-circle"></div>
         <div class="circle" id="yellow-circle"></div>
         
--->
+
         <input id="textInput" type="text">
         <button id="textChanger">Change the text!</button>
         <p id="textNew">This is some text.</p>
+-->
         <script type="text/javascript">
             // This is a one line comment
             /*
@@ -74,11 +75,19 @@
 //            }
             //var x = "Rob";
             //alert(x);
-            document.getElementById("textChanger").onclick = function() {
-                var textEntered = "";
-                textEntered = document.getElementById("textInput").value;
-                document.getElementById("textNew").innerHTML = textEntered;
-            }
+//            document.getElementById("textChanger").onclick = function() {
+//                var textEntered = "";
+//                textEntered = document.getElementById("textInput").value;
+//                document.getElementById("textNew").innerHTML = textEntered;
+//            }
+            var myArray = new Array();
+            myArray[0] = "pizza";
+            myArray[1] = "chocolate";
+            var tweets = ["Morning everybody!", "I love coffee!"];
+            //alert(tweets[1]);
+            tweets.push("Back to work!");
+            tweets.splice(1, 1, "Cornflakes for Breakfast!", "Num Num");
+            console.log(tweets);
         </script>
     </body>
 </html>
