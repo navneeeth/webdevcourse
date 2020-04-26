@@ -42,9 +42,14 @@
         <button id="textChanger">Change the text!</button>
         <p id="textNew">This is some text.</p>
 -->
+<!--
         <p>What is the magic word?</p>
         <p><input type="text" id="magicWord"></input></p>
         <p><button id="checkMagicWord">Enter</button></p>
+-->
+        <p>How many fingers am I holding up?</p>
+        <p><input type="text" id="fingerInput"></p>
+        <p><button id="checkInput">Check</button></p>
         <script type="text/javascript">
             // This is a one line comment
             /*
@@ -91,12 +96,26 @@
 //            tweets.push("Back to work!");
 //            tweets.splice(1, 1, "Cornflakes for Breakfast!", "Num Num");
 //            console.log(tweets);
-              document.getElementById("checkMagicWord").onclick = function() {
-                  if(document.getElementById("magicWord").value == "magic") {
-                      alert("Correct magic word!");
-                  }  
-                  else {
-                      alert("Wrong magic word! Try again.");
+//              document.getElementById("checkMagicWord").onclick = function() {
+//                  if(document.getElementById("magicWord").value == "magic") {
+//                      alert("Correct magic word!");
+//                  }  
+//                  else {
+//                      alert("Wrong magic word! Try again.");
+//                  }
+//              }
+              document.getElementById("checkInput").onclick = function() {
+                  var x = Math.floor(Math.random() * 6);
+                  var y="";
+                  if(x>1) {
+                      y="s";
+                  }
+                  var input = document.getElementById("fingerInput").value;
+                  if(input == x) {
+                      alert("Correct! I am holding "+x+" finger"+y+" up!");
+                  }
+                  else{
+                      alert("Wrong! I am holding "+x+" finger"+y+" up!");
                   }
               }
         </script>
