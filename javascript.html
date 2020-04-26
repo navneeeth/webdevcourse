@@ -47,9 +47,12 @@
         <p><input type="text" id="magicWord"></input></p>
         <p><button id="checkMagicWord">Enter</button></p>
 -->
+<!--
         <p>How many fingers am I holding up?</p>
         <p><input type="text" id="fingerInput"></p>
         <p><button id="checkInput">Check</button></p>
+-->
+        <div id="tweetDiv"></div>
         <script type="text/javascript">
             // This is a one line comment
             /*
@@ -104,20 +107,26 @@
 //                      alert("Wrong magic word! Try again.");
 //                  }
 //              }
-              document.getElementById("checkInput").onclick = function() {
-                  var x = Math.floor(Math.random() * 6);
-                  var y="";
-                  if(x>1) {
-                      y="s";
-                  }
-                  var input = document.getElementById("fingerInput").value;
-                  if(input == x) {
-                      alert("Correct! I am holding "+x+" finger"+y+" up!");
-                  }
-                  else{
-                      alert("Wrong! I am holding "+x+" finger"+y+" up!");
-                  }
-              }
+//              document.getElementById("checkInput").onclick = function() {
+//                  var x = Math.floor(Math.random() * 6);
+//                  var y="";
+//                  if(x>1) {
+//                      y="s";
+//                  }
+//                  var input = document.getElementById("fingerInput").value;
+//                  if(input == x) {
+//                      alert("Correct! I am holding "+x+" finger"+y+" up!");
+//                  }
+//                  else{
+//                      alert("Wrong! I am holding "+x+" finger"+y+" up!");
+//                  }
+//              }
+            var tweets = ["Hi everyone!", "I love cornflakes", "Good Night!"];
+            var tweetString;
+            for (var i=0; i<tweets.length; i++) {
+                tweetString = tweetString + "<p>"+tweets[i]+"</p>";
+            }
+            document.getElementById("tweetDiv").innerHTML = tweetString;
         </script>
     </body>
 </html>
