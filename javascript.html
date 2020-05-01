@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Javascript</title>
+        <title>Reaction Timer</title>
 <!--
         <style type="text/css">
             .circle {
@@ -21,6 +21,12 @@
             }
         </style>
 -->
+<!--
+        <style type="text/css">
+           
+        </style>
+-->
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
 <!--
@@ -53,8 +59,9 @@
         <p><button id="checkInput">Check</button></p>
 -->
 <!--        <div id="tweetDiv"></div>-->
+<!--
         <p>How many fingers are you holding up?</p>
-<!--        <p><input type="text" id="myNumber"></p>-->
+        <p><input type="text" id="myNumber"></p>
         <p>
             <select id="myNumber">
                 <option>0</option>    
@@ -66,6 +73,13 @@
             </select>
         </p>
         <p><button id="guess">Guess!</button></p>
+-->
+        <h1>Test your Reactions!</h1>
+        <p>Click on the boxes and circles as quickly as you can!</p>
+        <p class="bold">Your time: <span id="timeTaken"></span></p>
+        <p class="bold">Best time: <span id="bestTime"></span></p>
+        <div id="shape"></div>
+<!--
         <script type="text/javascript">
             // This is a one line comment
             /*
@@ -148,37 +162,39 @@
 //                i++;
 //            }
 //            document.getElementById("tweetDiv").innerHTML = tweetString;
-            function doAGuess(correctAnswer) {
-                var guess = Math.floor(Math.random() * 6);
-                if(guess == correctAnswer) {
-                    // Computer is correct.
-                    // gotIt = true;
-                    // alert ("Got it! It was a "+guess+". It took me "+numberOfGuesses+" guesses.");
-                    return true;
-                } else {
-                    //Computer is wrong.
-                    // numberOfGuesses+=1;
-                    return false;
-                }
-            }
-            document.getElementById("guess").onclick = function() {
-                var myNumber = document.getElementById("myNumber").value;
-                var gotIt = false;
-                var numberOfGuesses = 1;
-                //alert(myNumber);
-                if(myNumber>5) {
-                    alert("Please enter a number between 0 and 5.");
-                } else {
-                    while(gotIt == false) {
-                        if(doAGuess(myNumber)) {
-                            gotIt = true;
-                            alert ("Got it! It was a "+myNumber+". It took me "+numberOfGuesses+" guesses.");
-                        } else {
-                            numberOfGuesses++;
-                        }
-                    }
-                }
-            }
+//            function doAGuess(correctAnswer) {
+//                var guess = Math.floor(Math.random() * 6);
+//                if(guess == correctAnswer) {
+//                    // Computer is correct.
+//                    // gotIt = true;
+//                    // alert ("Got it! It was a "+guess+". It took me "+numberOfGuesses+" guesses.");
+//                    return true;
+//                } else {
+//                    //Computer is wrong.
+//                    // numberOfGuesses+=1;
+//                    return false;
+//                }
+//            }
+//            document.getElementById("guess").onclick = function() {
+//                var myNumber = document.getElementById("myNumber").value;
+//                var gotIt = false;
+//                var numberOfGuesses = 1;
+//                //alert(myNumber);
+//                if(myNumber>5) {
+//                    alert("Please enter a number between 0 and 5.");
+//                } else {
+//                    while(gotIt == false) {
+//                        if(doAGuess(myNumber)) {
+//                            gotIt = true;
+//                            alert ("Got it! It was a "+myNumber+". It took me "+numberOfGuesses+" guesses.");
+//                        } else {
+//                            numberOfGuesses++;
+//                        }
+//                    }
+//                }
+//            }
         </script>
+-->
+        <script type="text/javascript" src="script.js"></script>
     </body>
 </html>
