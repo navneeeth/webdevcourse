@@ -2,6 +2,7 @@
     <head>
         <title>jQuery</title>
         <script type="text/javascript" src="jquery.min.js"></script>
+<!--
         <style type="text/css">
             #circle {
                 width: 150px;
@@ -17,14 +18,40 @@
                 margin: 10px;
             }
         </style>
+-->
+        <style type="text/css">
+/*
+            #hiddenText {
+                display: none;
+            }
+*/
+            #circle {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                background-color: green;
+            }
+        </style>
     </head>
     <body>
+<!--
        <div id="circle"></div>
        <div class="square"></div>
        <div class="square"></div>
+-->
 <!--        <p>This is some text.</p>-->
 <!--        <iframe src="http://www.ksca.cricket"></iframe>-->
-        
+<!--
+        <p id="text">This is some text!</p>
+        <button id="fadeOut">Fade Out Text</button>
+        <p id="hiddenText">This text will be initially hidden.</p>
+        <button id="fadeIn">Fade In Text</button>
+-->
+<!--
+        <p id="text">This is some text.</p>
+        <button id="toggle">Toggle Fade</button>
+-->
+        <div id="circle"></div>
         <script type="text/javascript">
 //            if(typeof jQuery == "undefined") {
 //                alert("jQuery is not installed.");
@@ -49,15 +76,41 @@
 ////                alert($("p").html());
 //                $("iframe").attr("src", "https://www.codestars.com");
 //            });
-            $("div").click(function() {
-                if($(this).attr("id") == "circle") {
-                    alert("You clicked on a "+$(this).attr("id"));
-                } else {
-                    alert("You clicked on a "+$(this).attr("class"));
-                }
-                $(this).css("display", "none");
-            });
+//            $("div").click(function() {
+////                if($(this).attr("id") == "circle") {
+////                    alert("You clicked on a "+$(this).attr("id"));
+////                } else {
+////                    alert("You clicked on a "+$(this).attr("class"));
+////                }
+////                $(this).css("display", "none");
+//                $(this).fadeOut("slow", function() {
+//                    alert("FadeOut has finished!");
+//                });
+//            });
             //alert($("body").css("width"));
+//            $("#fadeOut").click(function() {
+//                $("#text").fadeOut();
+//            });
+//            $("#fadeIn").click(function() {
+//                $("#hiddenText").fadeIn();
+//            });
+//            $("#toggle").click(function() {
+//                if($("#text").css("display") == "none") {
+//                    $("#text").fadeIn();
+//                } else {
+//                    $("#text").fadeOut();
+//                }
+//            });
+            $("#circle").click(function() {
+                $(this).animate({
+                    width: "400px",
+                    height: "400px",
+                    marginLeft: "100px",
+                    marginTop: "100px"
+                }, 2000, function() {
+                    $(this).css("background-color", "red");
+                });
+            });
         </script>
     </body>
 </html>
