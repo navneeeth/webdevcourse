@@ -79,6 +79,18 @@
             }
         </style>
 -->
+        <style type="text/css">
+            #resizable {
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+            }
+            #also {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+            }
+        </style>
     </head>
     <body>
 <!--
@@ -125,6 +137,10 @@
         </div>
 -->
         <div id="draggable">Drag me!</div>
+        <div style="width: 400px; height: 300px; background-color: yellow" id="draggable1"><span>Drag me!</span></div>
+        <div id="resizable"></div>
+        <div id="also"></div>
+<!--        <div id="draggable2">Drag me!</div>-->
         <script type="text/javascript">
 //            if(typeof jQuery == "undefined") {
 //                alert("jQuery is not installed.");
@@ -227,7 +243,19 @@
 //                }
 //                //alert(errorMessage);
 //            });
-            $( "#draggable" ).draggable();
+            $( "#draggable" ).draggable({ axis: "x" });
+//            $( "#draggable1" ).draggable({ containment: "#containment-wrapper", scroll: false });
+            $( "span" ).draggable({ containment: "parent" });
+            $( "#resizable" ).resizable({
+                grid: 50,
+                alsoResize: "#also",
+                resize: function(event, ui) {
+                    if($("#resizable").width() > 300) {
+                        alert("Big enough!");
+                    }
+                }
+            });
+            $( "#also" ).resizable();
         </script>
     </body>
 </html>
